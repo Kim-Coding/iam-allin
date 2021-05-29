@@ -23,3 +23,4 @@
 ### Domain  
 
 # 서버구조  
+<img width="620" alt="django" src="https://user-images.githubusercontent.com/54696445/120059937-9bb32f80-c08f-11eb-84fc-bc5f0671241d.png">
