@@ -3,12 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    {% load static %}
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="{% static 'plus_numlist.js' %}"></script>
-    <link href="{% static 'table.css' %}" type="text/css" rel="stylesheet">
-    <link href="{% static 'nav.css' %}" type="text/css" rel="stylesheet">
-    <link href="{% static 'form.css' %}" type="text/css" rel="stylesheet">
     <title>iam-allin</title>
 </head>
 <body>
@@ -48,8 +42,12 @@
         {% endfor %}
     </div>
 {% else %}
-    <img src="{% static 'main.png' %}" width="100%" height="80%">
 {% endif %}
 
 </body>
+  {% load static %}
+    <script src="{% static 'plus_numlist.js' %}"></script>
+    <link href="{% static 'table.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'nav.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'form.css' %}" type="text/css" rel="stylesheet">
 </html>
