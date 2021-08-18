@@ -1,6 +1,7 @@
 from django.db import models
+from rest_framework import serializers
 
-# Create your models here.
+
 class mynumlist(models.Model):
     no = models.CharField(max_length=4)
     content = models.TextField()
