@@ -1,7 +1,8 @@
+import ResultNumlist from "../../components/ResultNumlist";
+import "./numlist.css";
+
 function Numlist() {
-  return (
-    <></>
-  );
-};
+  return <ResultNumlist />;
+}
 
 export default Numlist;

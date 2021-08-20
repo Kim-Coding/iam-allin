@@ -1,27 +1,38 @@
-# [www.iam-allin.site](https://www.iam-allin.site)
-- 좀 더 나은 로또 번호를 생성해주는 서비스  
-- 평소에는 서버 꺼둡니다 
+2021.08.16~ Django -> React + Django 전면개편중
 
-# 기능  
+# [www.iam-allin.site](https://www.iam-allin.site)
+
+- 좀 더 나은 로또 번호를 생성해주는 서비스
+
+# 기능
+
 - 구글로그인
 - 번호 생성 / 추가
 - 내 리스트에 번호 조회 / 삭제
 
-# 스킬  
-### Django  
+# 스킬
+
+### Django
+
 - django-allauth
 
-### Nginx  
-### Gunicorn  
-### AWS  
+### Nginx
+
+### Gunicorn
+
+### AWS
+
 - EC2
 - lambda
 - cloudwatch
-### https  
+
+### https
+
 - certbot
 - letsencrypt
-### Domain  
 
-# 서버구조  
+### Domain
+
+# 서버구조
+
 <img width="578" alt="server" src="https://user-images.githubusercontent.com/54696445/120060181-3b24f200-c091-11eb-9061-501bf7dc6d5c.png">
-

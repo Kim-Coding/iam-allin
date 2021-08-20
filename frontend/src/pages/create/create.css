@@ -1,0 +1,47 @@
+@media all and (min-width: 769px) {
+  input[type="text"] {
+    border: 3px solid;
+    border-radius: 15px;
+    height: 10vh;
+    width: 75vw;
+    font-size: 3.5vh;
+    text-align: center;
+  }
+}
+@media all and (max-width: 768px) {
+  input[type="text"] {
+    border: 3px solid;
+    border-radius: 15px;
+    height: 7vh;
+    width: 70vw;
+    font-size: 2.5vh;
+    text-align: center;
+  }
+}
+
+.ResultCreate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.Create {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.List {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.List p {
+  width: 60vw;
+  text-align: center;
+}
+.List button {
+  width: 5vw;
+}
