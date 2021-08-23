@@ -1,5 +1,3 @@
-venv
-db.sqlite3
-.DS_Store
-makenum.py
 secrets.json
+
+db.sqlite3
