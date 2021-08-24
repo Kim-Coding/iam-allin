@@ -1,10 +1,14 @@
 import "./create.css";
-import ResultCreate from "../../components/ResultCreate";
-import MakeCreate from "../../components/MakeCreate";
+import ResultCreate from "../../components/create/ResultCreate";
+import MakeCreate from "../../components/create/MakeCreate";
 import { useState } from "react";
 
 function Create() {
   const [result, setResult] = useState([]);
+  const cur = Math.ceil(
+    (new Date() - new Date(2002, 11, 7, 19, 59)) / 604800000
+  );
+
   function makeResult(data) {
     setResult(data);
   }
@@ -12,7 +16,7 @@ function Create() {
   return (
     <>
       <MakeCreate makeResult={makeResult} />
-      <ResultCreate value={result} />
+      <ResultCreate value={result} cur={cur} />
     </>
   );
 }

@@ -5,41 +5,19 @@ function MakeCreate({ makeResult }) {
   const [value, setValue] = useState();
   const [exist, setExist] = useState([]);
 
-  const cur = Math.ceil(
-    (new Date() - new Date(2002, 11, 7, 19, 59)) / 604800000
-  );
-
-  const getNum = async (no) => {
-    let temp = [];
-    const noList = [
-      no,
-      no - 1,
-      no - 2,
-      no - 3,
-      no - 4,
-      no - 5,
-      no - 6,
-      no - 7,
-      no - 8,
-      no - 9,
-    ];
-
-    const cc = (data) => {
-      temp = temp.concat(data);
-    };
-    await Promise.all(
-      noList.map((i) =>
-        axios.get(`/api/${i}`).then((res) => {
-          cc(res.data[0].content.split(" ").map(Number));
-        })
-      )
-    );
-    return temp;
+  const getNum = async () => {
+    let numlist = [];
+    await axios.get(`/winnum/`).then((res) => {
+      res.data.forEach((element) => {
+        numlist = numlist.concat(element.content.split(" ").map(Number));
+      });
+    });
+    return numlist;
   };
 
   useEffect(() => {
-    getNum(cur).then((res) => setExist(res));
-  }, [cur]);
+    getNum().then((res) => setExist(res));
+  }, []);
 
   const combination = (arr, selectNum) => {
     const combinationArr = [];

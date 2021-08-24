@@ -1,0 +1,13 @@
+body {
+  font-family: arial, helvetica, sans-serif;
+}
+
+.Nav {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #3b5998;
+  font-size: 3rem;
+}

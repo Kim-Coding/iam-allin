@@ -1,4 +1,10 @@
-2021.08.16~ Django -> React + Django 전면개편중
+2021.08.16~
+
+React + Django
+번호 추첨과 관련된 핵심만 구현
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+~2021.08.15
 
 # [www.iam-allin.site](https://www.iam-allin.site)
 
