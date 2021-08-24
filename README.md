@@ -10,6 +10,7 @@ React + Django
 # [www.iam-allin.site](https://www.iam-allin.site)
 
 - 좀 더 나은 로또 번호를 생성해주는 서비스
+- 서버비용 발생으로 평소에는 꺼둡니다. 원하시면 잠깐 켜드려요(~22년 5월)
 
 # 기능
 
