@@ -3,20 +3,12 @@ import axios from "axios";
 
 function MakeCreate({ makeResult }) {
   const [value, setValue] = useState();
-  const [exist, setExist] = useState([]);
-
-  const getNum = async () => {
-    let numlist = [];
-    await axios.get(`/winnum/`).then((res) => {
-      res.data.forEach((element) => {
-        numlist = numlist.concat(element.content.split(" ").map(Number));
-      });
-    });
-    return numlist;
-  };
+  const [exist, setExist] = useState();
 
   useEffect(() => {
-    getNum().then((res) => setExist(res));
+    axios.get(`/winnum/`).then((res) => {
+      setExist(JSON.parse(res.data));
+    });
   }, []);
 
   const combination = (arr, selectNum) => {
@@ -44,25 +36,45 @@ function MakeCreate({ makeResult }) {
 
   const onClick = (e) => {
     const arr = [];
+    const noArr = Object.keys(exist);
+    const maxNo = noArr[9];
+    const maxNoValue = exist[maxNo];
+    const valueArr = Object.values(exist);
     const notExist = [];
+    const existArr = [
+      ...new Set(
+        valueArr.reduce((pre, cur) => {
+          return pre.concat(cur);
+        })
+      ),
+    ];
     for (let i = 1; i < 46; i++) {
-      if (!exist.includes(i)) {
+      if (!existArr.includes(i)) {
         notExist.push(i);
       }
     }
+
     let i = 0;
+
     while (i < value) {
       let temp = [];
+      let count = 0;
       const randomNum = Math.round(Math.random());
       if (randomNum === 0) {
         temp = combination(notExist, 4);
-        temp = temp.concat(combination(exist, 2));
+        temp = temp.concat(combination(existArr, 2));
       } else {
         temp = combination(notExist, 5);
-        temp = temp.concat(combination(exist, 1));
+        temp = temp.concat(combination(existArr, 1));
       }
       const sum = temp.reduce((pre, cur) => pre + cur, 0);
-      if (100 < sum && sum < 170) {
+
+      for (let num of temp) {
+        if (num in maxNoValue) {
+          count += 1;
+        }
+      }
+      if (100 < sum && sum < 170 && count === 1) {
         temp.sort((a, b) => a - b);
         arr.push(temp);
         i += 1;

@@ -1,4 +1,4 @@
-function ResultCreate({ value, cur }) {
+function ResultCreate({ value }) {
   return (
     <div className="ResultCreate">
       {value.map((list, index) => (
