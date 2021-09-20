@@ -61,11 +61,11 @@ function MakeCreate({ makeResult }) {
       let count = 0;
       const randomNum = Math.round(Math.random());
       if (randomNum === 0) {
-        temp = combination(notExist, 4);
-        temp = temp.concat(combination(existArr, 2));
+        temp = combination(notExist, 2);
+        temp = temp.concat(combination(existArr, 4));
       } else {
-        temp = combination(notExist, 5);
-        temp = temp.concat(combination(existArr, 1));
+        temp = combination(notExist, 3);
+        temp = temp.concat(combination(existArr, 3));
       }
       const sum = temp.reduce((pre, cur) => pre + cur, 0);
 
@@ -74,7 +74,7 @@ function MakeCreate({ makeResult }) {
           count += 1;
         }
       }
-      if (100 < sum && sum < 170 && count === 1) {
+      if (100 < sum && sum < 180 && count === 1) {
         temp.sort((a, b) => a - b);
         arr.push(temp);
         i += 1;
