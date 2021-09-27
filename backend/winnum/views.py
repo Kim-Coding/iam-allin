@@ -7,6 +7,7 @@ import json
 import math
 
 recentNo = math.ceil((datetime.datetime.now()-datetime.datetime(2002,12,7)).days/7)
+print(recentNo)
 arr = {}
 
 for i in range(recentNo, recentNo-10, -1):

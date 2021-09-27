@@ -69,8 +69,8 @@ function MakeCreate({ makeResult }) {
       }
       const sum = temp.reduce((pre, cur) => pre + cur, 0);
 
-      for (let num of temp) {
-        if (num in maxNoValue) {
+      for (const num of temp) {
+        if (maxNoValue.includes(num)) {
           count += 1;
         }
       }
