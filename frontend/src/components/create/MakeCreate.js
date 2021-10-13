@@ -37,7 +37,7 @@ function MakeCreate({ makeResult }) {
   const onClick = (e) => {
     const arr = [];
     const noArr = Object.keys(exist);
-    const maxNo = noArr[9];
+    const maxNo = noArr[4];
     const maxNoValue = exist[maxNo];
     const valueArr = Object.values(exist);
     const notExist = [];
@@ -59,13 +59,16 @@ function MakeCreate({ makeResult }) {
     while (i < value) {
       let temp = [];
       let count = 0;
-      const randomNum = Math.round(Math.random());
+      const randomNum = Math.round(Math.random() * 2);
       if (randomNum === 0) {
         temp = combination(notExist, 2);
         temp = temp.concat(combination(existArr, 4));
-      } else {
+      } else if (randomNum === 1) {
         temp = combination(notExist, 3);
         temp = temp.concat(combination(existArr, 3));
+      } else {
+        temp = combination(notExist, 4);
+        temp = temp.concat(combination(existArr, 2));
       }
       const sum = temp.reduce((pre, cur) => pre + cur, 0);
 
@@ -74,10 +77,26 @@ function MakeCreate({ makeResult }) {
           count += 1;
         }
       }
-      if (100 < sum && sum < 180 && count === 1) {
+      if (90 < sum && sum < 180 && count <= 1) {
         temp.sort((a, b) => a - b);
-        arr.push(temp);
-        i += 1;
+        let check = 0;
+        let checknum = 0;
+
+        for (let num of temp) {
+          if (checknum === 0) {
+            checknum = num;
+          } else {
+            if (num - 1 === checknum) {
+              check += 1;
+            }
+            checknum = num;
+          }
+        }
+
+        if (check === 0 || check === 1) {
+          arr.push(temp);
+          i += 1;
+        }
       }
     }
     makeResult(arr);

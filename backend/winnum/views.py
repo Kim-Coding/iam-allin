@@ -10,7 +10,7 @@ recentNo = math.ceil((datetime.datetime.now()-datetime.datetime(2002,12,7)).days
 print(recentNo)
 arr = {}
 
-for i in range(recentNo, recentNo-10, -1):
+for i in range(recentNo, recentNo-5, -1):
     res = requests.get(f'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo={i}').json()
     arr[str(i)] = [res.get('drwtNo1'),res.get('drwtNo2'),res.get('drwtNo3'),res.get('drwtNo4'),res.get('drwtNo5'),res.get('drwtNo6')]
 
