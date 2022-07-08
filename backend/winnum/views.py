@@ -6,15 +6,15 @@ import datetime
 import json
 import math
 
-recentNo = math.ceil((datetime.datetime.now()-datetime.datetime(2002,12,7)).days/7)
-print(recentNo)
-arr = {}
+recent_no = math.ceil((datetime.datetime.now()-datetime.datetime(2002,12,7)).days/7)
+print(recent_no)
+win_dict = {}
 
-for i in range(recentNo, recentNo-5, -1):
+for i in range(recent_no, recent_no-5, -1):
     res = requests.get(f'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo={i}').json()
-    arr[str(i)] = [res.get('drwtNo1'),res.get('drwtNo2'),res.get('drwtNo3'),res.get('drwtNo4'),res.get('drwtNo5'),res.get('drwtNo6')]
+    win_dict[str(i)] = [res.get('drwtNo1'),res.get('drwtNo2'),res.get('drwtNo3'),res.get('drwtNo4'),res.get('drwtNo5'),res.get('drwtNo6')]
 
 # Create your views here.
 class ResultWinnum(APIView):
     def get(self, request):
-        return Response(json.dumps(arr))
+        return Response(json.dumps(win_dict))
