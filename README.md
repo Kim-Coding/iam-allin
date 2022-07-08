@@ -15,7 +15,7 @@ React + Django
 
 ~2021.08.15
 
-# [www.iam-allin.site](https://www.iam-allin.site)
+# ~~[www.iam-allin.site](https://www.iam-allin.site)~~
 
 - 좀 더 나은 로또 번호를 생성해주는 서비스
 - 인스턴스 종료 상태 (도메인은 22년 5월까지)
